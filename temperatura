@@ -1,0 +1,48 @@
+  void main() {
+        Scanner sc = new Scanner(System.in);
+        IO.println("digite as temperaturas");
+        int soma = 0;
+        int[] nums = new int[10];
+        for (int i = 0; i < 10; i++) {
+            nums[i] = sc.nextInt();
+            soma = soma + nums[i];
+        }
+        IO.println(" esses são os maiores e menores  numeros");
+        int maior = 0;
+        int menor = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+
+
+            if (nums[i] > maior) {
+                maior = nums[i];
+            }
+            if (nums[i] < menor) {
+                menor = nums[i];
+            }
+
+        }
+        IO.println("seu menor numero é:" + menor);
+        IO.println("seu maior numero é:" + maior);
+
+        IO.println("sua media é:" + soma / 10);
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < soma / 10) {
+                IO.println("menores numeros antes da media: " + nums[i]);
+            }
+        }
+        IO.println("digite um valor para buscar no vetor");
+        int busca = sc.nextInt();
+
+        int encontro = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == busca) {
+                encontro = encontro + 1;
+            }
+        }
+            if (encontro > 0) {
+                IO.println("O valor " + busca + " está presente no vetor!");
+            } else {
+                IO.println("O valor  " + busca + " NÃO está presente no vetor.");
+            }
+        }
